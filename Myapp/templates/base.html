@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    {% block head %}
+    <title>BASE</title>
+    {% endblock %}
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	
+	<!-- Font -->
+	 <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
+	<link rel="stylesheet" href="/static/common-css/bootstrap.css">
+	<link href="/static/common-css/ionicons.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/common-js/jquery.classycountdown.js" />	
+	<link href="/static/css/styles.css" rel="stylesheet">
+	<link href="/static/css/responsive.css" rel="stylesheet">
+	<style>
+		body{
+			background-image: url('/static/images/face.webp'); 
+			background-size:  100% 100%;
+			background-position:absolute;
+			background-repeat:no-repeat;
+			
+
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="main-area-wrapper">
+		<div class="main-area center-text" >
+			{% block body %}
+
+			
+
+			<h1>BASE TEMPLATE</h1>
+			{% endblock %}
+		</div><!-- main-area -->
+	</div><!-- main-area-wrapper -->
+	
+	<!-- SCIPTS -->
+	
+	<script src="/static/common-js/jquery-3.1.1.min.js"></script>
+	
+	<script src="/static/common-js/jquery.countdown.min.js"></script>
+	
+	<script src="/static/common-js/scripts.js"></script>
+	
+</body>
+</html>

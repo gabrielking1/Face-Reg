@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+</div>
+{% endfor %}
+<div class="display-table">
+    <div class="display-table-cell">
+        
+        <h1 class="title"><b>Face Recognition System</b></h1>
+        <p class="desc font-white">A Python-based system designed to combat impersonation</p>
+        {% if request.user.is_active and request.user.is_authenticated and request.user.is_staff is False and request.user.is_superuser is False%}
+        <a class="notify-btn" href="/logout/"><b>Logout</b></a>
+        <a class="notify-btn" href="/course/"><b>Course Registration</b></a>
+        <a class="notify-btn" href="/upload/"><b>Biometric Registration</b></a>
+        {%elif request.user.is_staff is True or request.user.is_superuser is True %}
+        <a class="notify-btn" href="/recognize/"><b>Student Verification</b></a>
+        <a class="notify-btn" href="/logout/"><b>Logout</b></a>
+        {%else%}
+        <a class="notify-btn" href="/register/"><b>Register</b></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="notify-btn" href="/login/"><b>Login</b></a>
+        {%endif%}
+        
+    </div><!-- display-table -->
+</div><!-- display-table-cell -->
+<p></p>
+<p></p>
+<br>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%}
+{%load widget_tweaks%}
+{% block head %}
+<title>Register</title>
+<link href="/static/css/form.css" rel="stylesheet">
+<style>
+    .topright {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        font-size: 14px;
+    }
+    label{
+        background: transparent;
+        font-family: Raleway-SemiBold;
+        font-size: 18px;
+        color: #333333;
+        line-height: 1.2;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+{% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {{ message }}
+        </div>
+      {% endfor %}
+<div class="container-contact100"> 
+    <a class="notify-btn topright" href="/"> Go Home
+    </a>       
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" action="/register/" method="POST">
+            {% csrf_token %}
+            <span class="contact100-form-title">
+                Register Form
+            </span>
+
+            {{form|crispy}}
+
+            {% comment %} <div class="wrap-input100  validate-input">
+                <label for="dp">Upload your Profile Picture  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="dp" type="file" name="image" accept="image/*">
+            </div>  {% endcomment %}
+            
+            <div class="container-contact100-form-btn">
+                <button type="submit" class="notify-btn">
+                    <span>
+                        Register
+                    </span>
+                </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset" class="notify-btn">
+                        <span>
+                            Clear
+                        </span>
+                    </button>
+            </div>
+        </form>
+        <p>already registered? &nbsp;&nbsp;
+            
+        </form>
+        <p>already registered? &nbsp;&nbsp;
+            <a href="/login/" class="notify-btn">
+                <span>
+                    Login
+                </span>
+            </a>
+        </p>
+    </div>
+</div>
+
+<script src="/static/js/form.js"></script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Facial",
+			"path": ".."
+		},
+		{
+			"name": "static",
+			"path": "../../face-recognition-using-django-master/home/static"
+		}
+	],
+	"settings": {}
+}
